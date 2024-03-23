@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/0b594a99fd.js" crossorigin="anonymous"></script>
+  <style>
+    .backclroot{
+        background-color: rgb(129, 136, 136);
+    }
+    .line{
+        width: 80px;
+        height: 4px; 
+        border-radius: 15%;
+        background-color: rgb(36, 126, 236);
+    }
+    .backclchild{
+        background-color: rgb(218, 228, 226);
+    }
+    
+    #photodiv{
+     
+        background-image: url(cat.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+    }
+
+    
+
+    .hdn{
+        display: none;
+    }
+
+
+    .pointer{
+        cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+    <div class="container backclroot" >
+        <h1 class="text-center"> Our Review</h1>
+        <hr class="line">
+        <div class="container mt-4  backclchild">
+
+            <div id="photodiv" class="mx-auto  d-block border mt-3">
+              
+            </div>
+
+
+
+           
+            
+           
+            
+
+           <h5 class="text-center" id="mo">Monisha</h5>
+            <h5 class="text-center hdn" id="mu">Mumu</h5>
+            <h5 class="text-center hdn" id="ni">Nitu</h5>
+            <h5 class="text-center hdn" id="sh">Shova</h5>
+
+            
+            <h6 class="text-center">Web Developer</h6>
+
+
+            <div  id="monisha">
+               Monisha Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed fuga ad error quisquam blanditiis dolore amet culpa
+                 ipsum beatae fugiat modi reiciendis debitis quam id, voluptate perferendis quae alias fugit!
+            </div>
+
+            <div class="hdn" id="mumu">
+               Mumu Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed fuga ad error quisquam blanditiis dolore amet culpa
+                 ipsum beatae fugiat modi reiciendis debitis quam id, voluptate perferendis quae alias fugit!
+            </div>
+
+            <div class="  hdn" id="nitu">
+                Nitu Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed fuga ad error quisquam blanditiis dolore amet culpa
+                  ipsum beatae fugiat modi reiciendis debitis quam id, voluptate perferendis quae alias fugit!
+             </div>
+
+             <div class="  hdn" id="shova">
+                Shova Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed fuga ad error quisquam blanditiis dolore amet culpa
+                  ipsum beatae fugiat modi reiciendis debitis quam id, voluptate perferendis quae alias fugit!
+             </div>
+             
+            <div class="text-center ">
+                <span>
+
+                    <i class="fa-solid fa-angle-left mr-3 pointer" onclick="changeBack()"></i>
+                    
+                    
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-angle-right ml-3 pointer" onclick="changeimg()"></i>
+                   
+                </span>
+
+
+            </div>
+            <div class="text-center mt-4">
+                <button class="btn-btn-outline-primary">Surprise me</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var imgcounter = 0;
+        var imgarry = ['cat.jpg', 'cat2.jpg', 'cat3.jpg', 'cat4.jpg'];
+        var names = ['monisha', 'mumu', 'nitu', 'shova'];
+        var nam = ['mo', 'mu', 'ni', 'sh'];
+    
+        function changeimg() {
+            imgcounter = (imgcounter + 1) % imgarry.length;
+            document.getElementById('photodiv').style.backgroundImage = 'url("' + imgarry[imgcounter] + '")';
+            tvisibility();
+        }
+    
+        function changeBack() {
+            imgcounter = (imgcounter - 1 + imgarry.length) % imgarry.length;
+            document.getElementById('photodiv').style.backgroundImage = 'url("' + imgarry[imgcounter] + '")';
+            tvisibility();
+        }
+    
+        function tvisibility() {
+            for (var i = 0; i < names.length; i++) {
+                if (i === imgcounter) {
+                    document.getElementById(names[i]).classList.remove('hdn');
+                    document.getElementById(nam[i]).classList.remove('hdn');
+                } else {
+                    document.getElementById(names[i]).classList.add('hdn');
+                    document.getElementById(nam[i]).classList.add('hdn');
+                }
+            }
+        }
+    
+        
+    </script>
+    
+    
+</body>
+</html>
